@@ -1,0 +1,39 @@
+name: 3d-balance
+
+base:
+  ubuntu: 16.04
+
+apt:
+  - cython
+  - python-setuptools
+  - python-dev
+  - python-scipy
+  - libgmp3-dev
+
+pip:
+  - casadi
+  - pycddlib
+  - quadprog
+  - sympy==0.7.1
+  - ipython==5.8.0
+
+source:
+  - name: openrave
+    repo: https://github.com/rdiankov/openrave.git
+    depends:
+      - libassimp-dev 
+      - libxml2-dev 
+      - libboost-dev
+      - libboost-python-dev
+      - libeigen3-dev
+      - libbullet-dev
+      - libode-dev
+      - liblapack-dev
+      - python-scipy
+      - libfcl-dev
+      - "collada-dom2.4-dp*"
+      - libsoqt4-dev
+      - coreutils
+      - nano
+    build: cmake
+
